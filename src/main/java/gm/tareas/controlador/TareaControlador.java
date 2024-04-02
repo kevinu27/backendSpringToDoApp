@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 //http://localhost:8080/tarea-app
 @RequestMapping("tarea-app")
-@CrossOrigin(value = "http://localhost:3000")
+@CrossOrigin(value = "http://localhost:5173")
 public class TareaControlador {
 
     private static final Logger logger = LoggerFactory.getLogger(TareaControlador.class);
@@ -56,7 +56,8 @@ public class TareaControlador {
         Tarea tarea = this.tareaServicio.buscarTareaPorId(id);
         tarea.setDescripcion(tareaRecibida.getDescripcion());
         tarea.setCompletada(tareaRecibida.getCompletada());
-        tarea.setSubtarea(tareaRecibida.getSubtarea());
+        tarea.setSubtareas(tareaRecibida.getSubtareas());
+        tarea.setNombre(tareaRecibida.getNombre());
         this.tareaServicio.guardarTarea(tarea);
         return ResponseEntity.ok(tarea);
     }

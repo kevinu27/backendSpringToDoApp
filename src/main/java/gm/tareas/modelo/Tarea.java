@@ -18,7 +18,8 @@ public class Tarea {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer idTarea;
+    String Nombre;
     String descripcion;
-    String subtarea;
+    String subtareas;
     Boolean completada;
 }
